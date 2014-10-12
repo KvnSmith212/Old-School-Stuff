@@ -1,0 +1,38 @@
+Some ideas in case the TA asks about how we incorporated design principles:
+
+GRASP:
+
+Creator: Register instantiates new users because it has the initialization data for new user. 
+(However, LoginData may be a better choice as it actually contains the list of users)
+
+Information Expert: LoginData gets the task of checking for valid users because it has the information necessary for that task
+
+Low Coupling: By separating our concerns out so that our activities deal with the xml files and the model, 
+but they never deal with each other helps us achieve low coupling.
+
+Controller: Activities act as controllers, and represent use case scenerios where certain events occur, 
+such as registration, trasactions, etc.
+
+High Cohesion: If we take a look at the LoginData class, all functions are related in a communicational manner. 
+They all operate on the same data set, which is the set of all users.
+
+Indirection: See low coupling (assigning responsibilities to an intermediate object)
+
+**************************
+
+Law of Demeter:
+
+**************************
+
+Tell, Don't Ask: 
+
+**************************
+
+SOLID:
+
+Single Responsibility: Activities have single responsibility of doing whatever function it's designed for, 
+such as registering a new user or creating a new transaction. Transaction has single responsibility of withdrawing/adding money to account balances.
+
+Dependency Inversion Principle: Program to interfaces/abstractions. WE HAVEN'T DONE THIS YET, 
+but we could create a report interface with a generate method and then have several different report types that implement 
+that interface and generate various reports.
